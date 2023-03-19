@@ -1,0 +1,55 @@
+create socket:
+    int socketfd = socket(int domain, int type, int protocol)
+
+    socket() = create socket
+    int socketfd = return file descriptor 
+    int domain:
+        AF_INET = IPv4
+        
+    int type:
+        SOCK_STREAM = TCP
+        SOCK_DEGRAM = UDP
+
+    protocol = 0 
+
+bind socket:
+    int bind(int socketfd, const struct sockaddr *addr, 
+                socklen_t addrlen)
+    bind() = assigns address to socket 
+    sockaddr = address to assign
+    addrlen = lenght in bytes of adrees 
+    return = 0 in succes and -1 in fail 
+
+socket address:
+
+    struct sockaddr {
+        sa_family_t sa_family;
+        char sa_data[14];
+    }
+
+listen for connection in socket:
+    int listen(int socketfd, int backlog)
+    listen() = listen for connection
+    socketfd = socket to put in listen 
+    backlog = number of connection that server can handle 
+
+accept connection:
+    newwockfd = accept(socketfd, (struct sockaddr *)&addr, &addrlen);
+    newwockfd = to communicate after connection
+
+int connection:
+    int connect(int socketfd, const struct sockaddr *addr,
+                socklen_t *addr);
+    return: 0 in succes and -1 in fail 
+
+read:
+    int read(newwockfd, buffer, buffer_size);
+    read() = read input 
+    newwockfd = socket to communicate
+    buffer = text to be read 
+    buffer_size = size of the data being read 
+
+write:
+    int read(newsockfd, buffer, buffer_size);
+    write = write output
+

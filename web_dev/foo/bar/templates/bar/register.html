@@ -1,0 +1,18 @@
+{% extends 'bar/layout.html' %}
+
+{% block body %}
+    <form method='POST'>
+        {% csrf_token %}
+        <label for="username">username:</label>
+        <input type="text" name="username" required="required"> 
+        <label for="email">email:</label>
+        <input type="email" name="email" required="required"> 
+        <label for="password">password:</label>
+        <input type="password" name="password" required="required"> 
+        <label for="confirmation">confirmation:</label>
+        <input type="password" name="confirmation" required="required"> 
+        <input type="submit"> 
+    </form>
+{% endblock %}
+    
+
