@@ -47,13 +47,15 @@ int main(int argc, char *argv[])
     if (newsockfd < 0)
         error("Error on accept");
 
+    printf("request: ");
     while (1) {
         bzero(buffer, 255);
         n = read(newsockfd, buffer, 255);
-        printf("client: \n%s\n", buffer);
+        printf("%s", buffer);
         if (buffer[n - 1] == '\n')
             break;
     }
+    printf("\n");
     if (n < 0)
         error("Error reading client");
 

@@ -4,10 +4,13 @@
 
 int main(int argc, char *argv[])
 {
-    FILE *fp = fopen("test.png", "r");
-    FILE *fr = fopen("foo.png", "w");
+    FILE *fp = fopen("/home/danyel/Music/nasa.mp3", "r");
+    if (fp == NULL)
+        return 1;
+
+    FILE *fr = fopen("foo.mp3", "w");
     int n = 0;
-    char str[4];
+    /** char str[4]; */
     while (1) 
     {
         uint8_t *byte;

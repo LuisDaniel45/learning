@@ -60,7 +60,7 @@ static void run()
 
     // wait for next event and returns event in variable ev 
     XNextEvent(dpy, &ev);
-
+    
     // if button press then exit program 
     if (ev.type == ButtonPress)
         return;

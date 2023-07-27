@@ -18,6 +18,7 @@
 static Display *dpy; 
 static int      scr;
 static Window   root; 
+Window main_win;
 
 // functions 
 static Window create_window(int x, int y, int w, int h, int b);
@@ -29,7 +30,7 @@ static void run(GC gc);
 int main()
 {
     // initialize variables 
-    Window main_win;
+    /** Window main_win; */
     GC gc;
 
     // open Display
@@ -104,8 +105,7 @@ static void run(GC gc)
             // if button "q" press exit application 
             case KeyPress: 
                 if (XkbKeycodeToKeysym(dpy, ev.xkey.keycode, 0, 0) == XK_q)
-                    return;
-        
+                        return;
         }
     
     }

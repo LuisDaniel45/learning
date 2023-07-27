@@ -74,8 +74,11 @@ int main(int argc, char *argv[])
         if (n < 0)
             error("Error sending html");
         bzero(buffer, 255);
+
     }
 
+    n = read(newsockfd, buffer, 255);
+    printf("client: \n%s\n", buffer);
 
     fclose(fp);
     close(newsockfd);

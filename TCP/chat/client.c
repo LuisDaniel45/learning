@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
         bzero(buffer, 255);
         n = read(socketfd, buffer, 255);
         if (n < 0)
-            error("eroor on reading");
+            error("error on reading");
         printf("server: %s", buffer);
 
         int i = strncmp("Bye", buffer, 3);
